@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -- GLOBAL TRANSITIONS -- */
+/* This makes every color change smooth (0.5s fade) */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* -- THEME DEFINITIONS (RGB values) -- */
+
+/* 1. Default (Cyber Blue) */
+:root {
+  --surface: 15 23 42;          /* Slate 900 */
+  --surface-highlight: 30 41 59; /* Slate 800 */
+  --primary: 56 189 248;        /* Sky 400 */
+  --secondary: 129 140 248;     /* Indigo 400 */
+}
+
+/* 2. Sakura (Subtle Pink) */
+[data-theme='pink'] {
+  --surface: 28 10 15;          /* Very Dark Rose */
+  --surface-highlight: 60 20 30; /* Dark Rose */
+  --primary: 251 113 133;       /* Rose 400 */
+  --secondary: 244 114 182;     /* Pink 400 */
+}
+
+/* 3. Forest (Nature Green) */
+[data-theme='green'] {
+  --surface: 5 46 22;           /* Dark Green */
+  --surface-highlight: 20 83 45; /* Green 900 */
+  --primary: 52 211 153;        /* Emerald 400 */
+  --secondary: 167 243 208;     /* Emerald 200 */
+}
+
+/* 4. Nebula (Deep Purple) */
+[data-theme='purple'] {
+  --surface: 19 4 40;           /* Deep Violet */
+  --surface-highlight: 46 16 101; /* Violet 900 */
+  --primary: 192 132 252;       /* Purple 400 */
+  --secondary: 232 121 249;     /* Fuchsia 400 */
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
